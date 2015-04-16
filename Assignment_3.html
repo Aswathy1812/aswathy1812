@@ -40,8 +40,9 @@
 
 		});
 
-		_.map(arr_str, function(num){ return (num * 3); });
-		console.log(arr_str);
+		arr_num = _.map(arr_num, function(num){
+			return num * 3; });
+		console.log(arr_num);
 
 		var even = _.find(arr_num, function(num){ return num % 2 == 0; });
 		console.log(even);
