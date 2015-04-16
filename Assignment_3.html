@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<script type="text/javascript" src="underscore.js"></script>
+		<script type="text/javascript">
+		var todo = [{
+			id: 101,
+			name: 'Soaps 1 dozen',
+			complete: false
+		}, {
+			id: 102,
+			name: 'Candles - 1 dozen',
+			complete: false
+		}, {
+			id: 103,
+			name: 'Knife - 2 Nos.',
+			complete: false
+		}, {
+			id: 104,
+			name: 'Pillow covers - 2 Nos.',
+			complete: false
+		}, {
+			id: 105,
+			name: 'Floor mat - 5 Nos',
+			complete: false
+		}, {
+			id: 106,
+			name: 'Frying pan - 2 Nos.',
+			complete: false
+		}, {
+			id: 107,
+			name: 'Washing powder - 2 Nos.',
+			complete: false
+		}];
+		var arr = ["a", "b", "c", "d", "e"];
+
+		_.each(arr, function(element, index){
+			console.log(element + " : " + index);
+
+		});
+
+		_.map(arr, function(num){ return (num * 3); });
+		console.log(arr)
+		</script>
+	</body>
+</html>
