@@ -30,17 +30,87 @@
 		}, {
 			id: 107,
 			name: 'Washing powder - 2 Nos.',
-			complete: false
+			complete: true
 		}];
-		var arr = ["a", "b", "c", "d", "e"];
+		var arr_str = ["a", "b", "c", "d", "e"];
+		var arr_num = [1, 2, 3, 4, 5, 6];
 
-		_.each(arr, function(element, index){
+		_.each(arr_str, function(element, index){
 			console.log(element + " : " + index);
 
 		});
 
-		_.map(arr, function(num){ return (num * 3); });
-		console.log(arr)
+		_.map(arr_str, function(num){ return (num * 3); });
+		console.log(arr_str);
+
+		var even = _.find(arr_num, function(num){ return num % 2 == 0; });
+		console.log(even);
+
+		var evens = _.filter(arr_num, function(num){ return num % 2 == 0; });
+		console.log(evens);
+
+		var where = _.where(todo, {name: "Knife - 2 Nos."});
+		console.log(where);
+
+		var findWhere = _.findWhere(todo, {complete: true});
+		console.log(findWhere);
+
+		var odds = _.reject(arr_num, function(num){ return num % 2 == 0; });
+		console.log(odds);
+
+		var every_1 = _.every([true, 1, null, 'yes'], _.identity);
+		var every_2 = _.every([true, 1, 'null', 'yes'], _.identity);
+		console.log(every_1);
+		console.log(every_2);
+
+		var some_1 = _.some([null, 0, 'yes', false]);
+		console.log(some_1);
+
+		var contains_1 = _.contains([1, 2, 3], 3);
+		var contains_2 = _.contains([1, 2, 3], 4);
+		console.log(contains_1);
+		console.log(contains_2);
+
+		var name = _.pluck(todo, 'name');
+		console.log(name);
+
+		var max = _.max(todo, function(each){ return each.id; });
+		console.log(max);
+
+		var min = _.min(todo, function(each){ return each.id; });
+		console.log(min);
+
+		var sortBy = _.sortBy(arr_num, function(num){ return num * -1; });
+		console.log(sortBy);
+
+		var indexBy = _.indexBy(todo, 'id');
+		console.log(indexBy);
+
+		var countBy = _.countBy(arr_num, function(num) {
+		  return num % 2 == 0 ? 'even': 'odd';
+		});
+		console.log(countBy);
+
+		var shuffle = _.shuffle(arr_num);
+		console.log(shuffle);
+
+		var sample_n = _.sample(arr_num);
+		console.log(sample_n);
+
+		var sample_4 = _.sample(arr_num, 3);
+		console.log(sample_4);
+
+		var toArray = (function(){ return _.toArray(arguments); })(1, 2, 3, 4);
+		console.log(toArray);
+
+		var size = _.size(todo);
+		console.log(size)
+
+		var partition = _.partition(arr_num, function(num){
+			return num % 2 == 0;
+		});
+		console.log(partition)
+
 		</script>
 	</body>
 </html>
