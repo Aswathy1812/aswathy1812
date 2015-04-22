@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<script type="text/javascript" src="underscore.js"></script>
+		<script type="text/javascript">
+	
+		var v = function(){
+			return "in variable";
+		};
+		console.log(v()); //in variable
+
+		var arr = [0,"a", function(){ return "in array";}];
+
+		console.log(arr[2]()); //in array
+
+
+		var obj = {
+			"name": "AAA",
+			"age": 25,
+			"func": function(){
+				return "in object";
+			}
+		};
+		console.log(obj['func']()); //in object
+		console.log(obj.func()); //in object
+
+
+		function func1(a, func){
+			return func();
+		};
+		console.log(func1(2, v)); //in variable
+
+		z = function(){
+			var a = "hello";
+			this.b = "hi";
+			console.log(this)
+		}
+		console.log(z.a); // undefined
+		console.log(z.b); // undefined
+
+		function func2(){
+			console.log(this);
+		}
+		func2(); // window
+
+		k = {
+			a:1,
+			b:2,
+			log: function(){
+				console.log(this);
+			}
+		}
+		k.log(); //Object {a: 1, b: 2, log: function}
+
+		x = {
+			a:1,
+			log: function(){
+				console.log(this);
+			}
+		}
+		y = {
+			b:1,
+			__proto__: x
+		}
+		z = {
+			c:1,
+			__proto__: y
+		}
+		x.log(); //{a: 1, log: function}
+		y.log(); //{b: 1, a: 1, log: function}
+		z.log(); //{c: 1, b: 1, a: 1, log: function}
+
+		</script>
+	</body>
+</html>
